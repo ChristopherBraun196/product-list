@@ -11,4 +11,13 @@ import { ProductList } from "./shared/components/product-list/product-list";
 })
 export class App {
   protected readonly title = signal('product-list');
+
+
+  // our_text: string = "textGen()"
+
+
+  textGen(){
+    return "hallo Welt"
+  }
 }
+ 
