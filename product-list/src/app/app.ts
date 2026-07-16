@@ -20,10 +20,17 @@ export class App {
 
   textGen(){
     this.our_text = "banana Love!!!!!"
+    this.isDisabled = true
   }
 
   hoverGen(){
     this.our_hover = "banana Love hover!!!!!"
+  }
+
+  isDisabled = false;
+
+  getBtnColor(){
+    return 'blue'
   }
 } 
  

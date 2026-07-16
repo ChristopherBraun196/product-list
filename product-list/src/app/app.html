@@ -5,7 +5,7 @@
 <h1>{{our_text}} </h1>
 <h2>{{our_hover}}</h2>
 
-<button (click)="textGen()">Klick Mich!</button>
+<button [style.color]="getBtnColor()" [disabled]="isDisabled" (click)="textGen()">Klick Mich!</button>
 
 <button (mouseover)="hoverGen()">Hover Meeeee</button>
 
