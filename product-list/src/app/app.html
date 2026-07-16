@@ -2,6 +2,11 @@
 
 <app-product-list></app-product-list>
 
-<h1>{{textGen()}} </h1>
+<h1>{{our_text}} </h1>
+<h2>{{our_hover}}</h2>
+
+<button (click)="textGen()">Klick Mich!</button>
+
+<button (mouseover)="hoverGen()">Hover Meeeee</button>
 
 <router-outlet />

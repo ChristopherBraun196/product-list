@@ -13,11 +13,17 @@ export class App {
   protected readonly title = signal('product-list');
 
 
-  // our_text: string = "textGen()"
+  our_text: string = "textGen()"
+
+  our_hover: string = "hoverGen()"
 
 
   textGen(){
-    return "hallo Welt"
+    this.our_text = "banana Love!!!!!"
   }
-}
+
+  hoverGen(){
+    this.our_hover = "banana Love hover!!!!!"
+  }
+} 
  
