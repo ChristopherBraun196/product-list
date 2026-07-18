@@ -1,36 +1,37 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Header } from "./layout/header/header";
-import { ProductList } from "./shared/components/product-list/product-list";
+import { Header } from './layout/header/header';
+import { ProductList } from './shared/components/product-list/product-list';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Header, ProductList],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
+  
   protected readonly title = signal('product-list');
+  our_text: string = 'textGen()';
 
-
-  our_text: string = "textGen()"
-
-  our_hover: string = "hoverGen()"
-
-
-  textGen(){
-    this.our_text = "banana Love!!!!!"
-    this.isDisabled = true
+  ngOnInit() {
+    this.our_text = "das ist ein hook text"
   }
 
-  hoverGen(){
-    this.our_hover = "banana Love hover!!!!!"
+  our_hover: string = 'hoverGen()';
+
+  textGen() {
+    this.our_text = 'Hallo Bananananananana!!!!!';
+    this.isDisabled = true;
+  }
+
+  hoverGen() {
+    this.our_hover = 'banana Love hover!!!!!';
   }
 
   isDisabled = false;
 
-  getBtnColor(){
-    return 'blue'
+  getBtnColor() {
+    return 'green';
   }
-} 
- 
+}
