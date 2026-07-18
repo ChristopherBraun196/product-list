@@ -22,6 +22,21 @@
 } -->
 
 <ul>
+
+    @switch (errormsg) {
+        @case("wrong text"){
+            <p>Hey das war der falsche Text.</p>
+        }
+          @case("wrong number"){
+            <p>Hey das war der falsche Nummer.</p>
+        }
+        @case(""){
+            <p>hey alles hat geklappt!</p>
+        }
+        @default {
+            <p>Hey wir wissen nicht was hier schief lief</p>
+        }
+    }
   @for (item of list; track item; let banana = $index; let count = $count) {
     <li>#{{ banana + 1 }}/{{ count }} : {{ item }}</li>
   }@empty {
