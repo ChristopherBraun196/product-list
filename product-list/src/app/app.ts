@@ -11,6 +11,8 @@ import { ProductDetail } from './shared/components/product-detail/product-detail
   styleUrl: './app.scss',
 })
 export class App {
+
+  lang = "";
   
   protected readonly title = signal('product-list');
   our_text: string = 'textGen()';

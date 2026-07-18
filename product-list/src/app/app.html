@@ -1,13 +1,23 @@
+@if (lang == 'de') {
+  <p>hallo Welt</p>
+} @else if (lang == 'en'){
+<p>hello world</p>
+}@else(){
+    <p>'language not found'</p>
+}
+
 <app-header></app-header>
 
 <app-product-detail></app-product-detail>
 
 <app-product-list></app-product-list>
 
-<h1>{{our_text}} </h1>
-<h2>{{our_hover}}</h2>
+<h1>{{ our_text }}</h1>
+<h2>{{ our_hover }}</h2>
 
-<button [style.color]="getBtnColor()" [disabled]="isDisabled" (click)="textGen()">Klick Mich!</button>
+<button [style.color]="getBtnColor()" [disabled]="isDisabled" (click)="textGen()">
+  Klick Mich!
+</button>
 
 <button (mouseover)="hoverGen()">Hover Meeeee</button>
 
