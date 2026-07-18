@@ -13,6 +13,9 @@ import { ProductDetail } from './shared/components/product-detail/product-detail
 export class App {
 
   lang = "";
+
+
+  list = ['apple', 3, 'banana', 'car'];
   
   protected readonly title = signal('product-list');
   our_text: string = 'textGen()';
