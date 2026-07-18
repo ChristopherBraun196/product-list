@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-header',
   imports: [],
@@ -8,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './header.scss',
 })
 export class Header {
-
+  
+  path = '';
+  btn_text = "Neues Produkt";
+  
+  ngOnInit() {
+    this.path = 'detail';
+    if(this.path == "detail"){
+      this.btn_text = "zurück zur Liste";
+    }
+  }
 }
