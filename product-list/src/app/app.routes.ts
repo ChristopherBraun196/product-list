@@ -4,8 +4,8 @@ import { ProductList } from './shared/components/product-list/product-list';
 import { PageNotFound } from './page-not-found/page-not-found';
 
 // import { Component } from '@angular/compiler';
-// import { CompA } from './comp-a/comp-a';
-// import { CompB } from './comp-b/comp-b';
+import { CompA } from './comp-a/comp-a';
+import { CompB } from './comp-b/comp-b';
 
 export const routes: Routes = [
   { path: '', component: ProductList },

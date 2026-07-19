@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject} from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { Header } from './layout/header/header';
 import { ProductList } from './shared/components/product-list/product-list';
 import { ProductDetail } from './shared/components/product-detail/product-detail';
 import { CurrencyPipe, JsonPipe } from '@angular/common';
+import { CounterService } from './counter_services';
 
 // kebab-case.pipe.ts
 import { Pipe, PipeTransform } from '@angular/core';
+import { CompA } from "./comp-a/comp-a";
+import { CompB } from "./comp-b/comp-b";
 @Pipe({
   name: 'truncate',
 })
@@ -23,12 +26,13 @@ export class TruncatePipe implements PipeTransform {
   imports: [Header, RouterOutlet,
     // CurrencyPipe,
     // JsonPipe
-    TruncatePipe
-  ] ,
+    TruncatePipe, CompA, CompB] ,
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
+
+  BananaService = inject(CounterService)
 
   price = 501.95
   data = {hallo: "welt"}
