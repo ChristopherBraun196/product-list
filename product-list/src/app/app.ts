@@ -32,6 +32,7 @@ export class TruncatePipe implements PipeTransform {
 })
 export class App {
 
+  currentCount = 5;
   count = signal(0)
 
   countmultiplier = signal(5)

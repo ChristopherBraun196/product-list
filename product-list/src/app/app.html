@@ -4,8 +4,10 @@
 <p>{{data |json}}</p> -->
 <!-- <h4>Wir testen pipes</h4> -->
 <!-- <p>{{ textvar |truncate:200 }}</p> -->
-<app-comp-a></app-comp-a>
+<app-comp-a [counterInput]="currentCount"></app-comp-a>
 <app-comp-b></app-comp-b>
+
+<button (click)="currentCount = 10">countchange </button>
 
 <!-- <p>{{BananaService.count}}</p> -->
 

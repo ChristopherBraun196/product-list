@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject,input } from '@angular/core';
 import { CounterService } from '../counter_services';
 
 @Component({
@@ -10,4 +10,6 @@ import { CounterService } from '../counter_services';
 })
 export class CompA {
   BananaService = inject(CounterService);
+
+  counterInput = input(0)
 }
