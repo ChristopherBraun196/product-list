@@ -3,15 +3,36 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 import { Header } from './layout/header/header';
 import { ProductList } from './shared/components/product-list/product-list';
 import { ProductDetail } from './shared/components/product-detail/product-detail';
+import { CurrencyPipe, JsonPipe } from '@angular/common';
+
+// kebab-case.pipe.ts
+import { Pipe, PipeTransform } from '@angular/core';
+@Pipe({
+  name: 'truncate',
+})
+export class TruncatePipe implements PipeTransform {
+  transform(value: string, limit:number =10): string {
+    return value.length < limit ? value: value.substring(0,limit) + "...";
+  }
+}
+
 
 @Component({
   selector: 'app-root',
   // imports: [RouterOutlet, Header, ProductList, ProductDetail, RouterLink],
-  imports: [Header, RouterOutlet] ,
+  imports: [Header, RouterOutlet,
+    // CurrencyPipe,
+    // JsonPipe
+    TruncatePipe
+  ] ,
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
+
+  price = 501.95
+  data = {hallo: "welt"}
+  textvar = "das ist ein kurzer Text von dir"
 
   myVar = "hello_world";
   lang = '';
