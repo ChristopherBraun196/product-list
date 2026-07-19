@@ -1,16 +1,19 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { Header } from './layout/header/header';
 import { ProductList } from './shared/components/product-list/product-list';
 import { ProductDetail } from './shared/components/product-detail/product-detail';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, ProductList, ProductDetail],
+  // imports: [RouterOutlet, Header, ProductList, ProductDetail, RouterLink],
+  imports: [Header, RouterOutlet] ,
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
+
+  myVar = "hello_world";
   lang = '';
 
   list = ['apple', 3, 'banana', 'car'];
