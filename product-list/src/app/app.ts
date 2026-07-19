@@ -1,4 +1,4 @@
-import { Component, signal, inject} from '@angular/core';
+import { Component, signal, inject, computed} from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { Header } from './layout/header/header';
 import { ProductList } from './shared/components/product-list/product-list';
@@ -31,6 +31,16 @@ export class TruncatePipe implements PipeTransform {
   styleUrl: './app.scss',
 })
 export class App {
+
+  count = signal(0)
+
+  countmultiplier = signal(5)
+
+  computedCound = computed(() => this.count() * this.countmultiplier())
+
+  signalUpdate(){
+    this.count.update(number => number +1)
+  }
 
   BananaService = inject(CounterService)
 

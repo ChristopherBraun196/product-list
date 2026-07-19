@@ -12,6 +12,14 @@
 <!-- <button (click)="BananaService.increment()"> erhöhen</button> -->
 <router-outlet />
 
+<h1>{{computedCound()}}</h1>
+
+<button (click)="count.set(5)">setterSignal</button>
+
+<button (click)="countmultiplier.set(10)">setterMultiplier</button>
+
+<button (click)="signalUpdate()">update</button>
+
 <!-- <app-product-detail></app-product-detail> -->
 
 <!-- <app-product-list></app-product-list> -->
