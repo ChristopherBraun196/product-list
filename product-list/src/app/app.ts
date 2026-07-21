@@ -6,10 +6,12 @@ import { ProductDetail } from './shared/components/product-detail/product-detail
 import { CurrencyPipe, JsonPipe } from '@angular/common';
 import { CounterService } from './counter_services';
 
+
 // kebab-case.pipe.ts
 import { Pipe, PipeTransform } from '@angular/core';
 import { CompA } from "./comp-a/comp-a";
 import { CompB } from "./comp-b/comp-b";
+import { User } from './service/user';
 @Pipe({
   name: 'truncate',
 })
@@ -26,11 +28,15 @@ export class TruncatePipe implements PipeTransform {
   imports: [Header, RouterOutlet,
     // CurrencyPipe,
     // JsonPipe
-    TruncatePipe, CompA, CompB] ,
+    // TruncatePipe, 
+    CompA, CompB] ,
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
+  userService = inject(User)
+
+
   myText = "";
 
   loggerFkt(value:string){

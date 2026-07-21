@@ -1,27 +1,33 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Product } from '../interfaces/product';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Products {
-  productlist: Product[] = [];
+  productlist = signal<Product[]> ([]);
 
-  productdetail: Product = {
+  productdetail = signal<Product>({
     name: 'n/a',
     description: 'n/a',
     specs: 'n/a',
     stock: 0,
     price: 0,
-  };
+  });
 
   setProductDetailByName(name: string) {
-    let tmpProduct = this.productlist.find((product) => product.name == name);
-    if (tmpProduct) this.productdetail = tmpProduct;
+    let tmpProduct = this.productlist().find((product) => product.name == name);
+
+    // let tmpProduct = this.productlist.find((product) => product.name == name);
+    if (tmpProduct) this.productdetail.set(tmpProduct);
+
+    setTimeout(() => {
+      this.productdetail.update((product) => ({ ...product, description: 'Banana' }));
+    }, 2000);
   }
 
   constructor() {
-    this.productlist = [
+    this.productlist.set([
       {
         name: 'Gaming Maus',
         description: `Eine ergonomische Gaming-Maus mit hoher Präzision und einstellbarer
@@ -76,6 +82,6 @@ Gaming-Sessions.`,
         stock: 150,
         price: 59.95,
       },
-    ];
+    ]);
   }
 }
