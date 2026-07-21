@@ -4,17 +4,20 @@
 <p>{{data |json}}</p> -->
 <!-- <h4>Wir testen pipes</h4> -->
 <!-- <p>{{ textvar |truncate:200 }}</p> -->
-<app-comp-a [counterInput]="currentCount"></app-comp-a>
+<app-comp-a (halloWeltEvent)="loggerFkt($event)" [counterInput]="currentCount"></app-comp-a>
+
+<p>{{ myText }}</p>
+
 <app-comp-b></app-comp-b>
 
-<button (click)="currentCount = 10">countchange </button>
+<button (click)="currentCount = 10">countchange</button>
 
 <!-- <p>{{BananaService.count}}</p> -->
 
 <!-- <button (click)="BananaService.increment()"> erhöhen</button> -->
 <router-outlet />
 
-<h1>{{computedCound()}}</h1>
+<h1>{{ computedCound() }}</h1>
 
 <button (click)="count.set(5)">setterSignal</button>
 

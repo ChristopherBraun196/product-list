@@ -31,6 +31,12 @@ export class TruncatePipe implements PipeTransform {
   styleUrl: './app.scss',
 })
 export class App {
+  myText = "";
+
+  loggerFkt(value:string){
+    // console.log("event Emitted")
+    this.myText = value
+  }
 
   currentCount = 5;
   count = signal(0)
