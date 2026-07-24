@@ -1,29 +1,67 @@
 <app-header></app-header>
+
+<!-- <form [formGroup]="userform" (ngSubmit)="formSubmit()">
+  <label for="name">Name: </label>
+  <input id="name" type="text" formControlName="firstName" />
+  <br />
+  <label for="mail">mail: </label>
+  <input id="mail" type="text" formControlName="email" />
+
+  <button type="submit">submit</button><br />
+  <button (click)="formReset()">reset</button>
+</form> -->
+
+<!-- <p>{{email?.valid}}</p> -->
+
+<!-- <p>{{userform.get("firstName")?.valid}}</p>
+
+<button (click)="fillForm()">fillForm</button>
+<button (click)="patchForm()">patchForm</button> -->
+
+<!-- 
+<p>{{ userform.get('firstName')?.valid }}</p>
+<p>{{ userform.valid }}</p> -->
+
+<!-- 
+<br /><br /><br /> -->
+<!-- <button (click)="updateInput()" [disabled]="!firstName.valid">Submit</button>
+@if (firstName.touched && !firstName.valid) {
+  <p>Fehler</p>
+}
+
+<button (click)="untouch()">untouch</button>
+
+<h2>touched {{ firstName.touched }}</h2>
+<h2>dirty {{ firstName.dirty }}</h2>
+
+ <h2>{{ firstName.valid }}</h2> -->
+<!-- <h2>{{ firstName.value }}</h2> ‚ -->
+
 <!-- 
 <p>{{price | currency: 'EUR'}}</p>
 <p>{{data |json}}</p> -->
 <!-- <h4>Wir testen pipes</h4> -->
 <!-- <p>{{ textvar |truncate:200 }}</p> -->
-<app-comp-a (halloWeltEvent)="loggerFkt($event)" [counterInput]="currentCount"></app-comp-a>
+<!-- <app-comp-a (halloWeltEvent)="loggerFkt($event)" [counterInput]="currentCount"></app-comp-a> -->
 
-<p>{{ myText }}</p>
+<!-- <p>{{ myText }}</p> -->
 
-<app-comp-b></app-comp-b>
+<!-- <app-comp-b></app-comp-b> -->
 
-<button (click)="currentCount = 10">countchange</button>
+<!-- <button (click)="currentCount = 10">countchange</button> -->
 
 <!-- <p>{{BananaService.count}}</p> -->
 
 <!-- <button (click)="BananaService.increment()"> erhöhen</button> -->
 <router-outlet />
 
-<h1>{{ computedCound() }}</h1>
+<!-- <h1>{{ computedCound() }}</h1> -->
 
-<button (click)="count.set(5)">setterSignal</button>
+<!-- <button (click)="count.set(5)">setterSignal</button> -->
 
-<button (click)="countmultiplier.set(10)">setterMultiplier</button>
+<!-- <button (click)="countmultiplier.set(10)">setterMultiplier</button> -->
 
-<button (click)="signalUpdate()">update</button>
+<!-- <button (click)="signalUpdate()">update</button> -->
 
 <!-- <app-product-detail></app-product-detail> -->
 

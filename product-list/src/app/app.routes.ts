@@ -6,11 +6,14 @@ import { PageNotFound } from './page-not-found/page-not-found';
 // import { Component } from '@angular/compiler';
 import { CompA } from './comp-a/comp-a';
 import { CompB } from './comp-b/comp-b';
+import { ProductForm } from './shared/components/product-form/product-form';
 
 export const routes: Routes = [
   { path: '', component: ProductList },
   { path: 'detail/:name', component: ProductDetail },
   { path: 'page-not-found', component: PageNotFound },
+  { path: 'productform', component: ProductForm },
+  { path: 'edit/:name', component: ProductForm },
   { path: '**', redirectTo: 'page-not-found' },
 ];
 

@@ -5,7 +5,7 @@ import { Product } from '../interfaces/product';
   providedIn: 'root',
 })
 export class Products {
-  productlist = signal<Product[]> ([]);
+  productlist = signal<Product[]>([]);
 
   productdetail = signal<Product>({
     name: 'n/a',
@@ -14,6 +14,14 @@ export class Products {
     stock: 0,
     price: 0,
   });
+
+  addProduct(product: Product) {
+    this.productlist.update((list) => [...list, product]);
+  }
+
+  updateProduct(originalName: string, product: Product) {
+    this.productlist.update((list) => list.map((p) => (p.name === originalName ? product : p)));
+  }
 
   setProductDetailByName(name: string) {
     let tmpProduct = this.productlist().find((product) => product.name == name);
@@ -24,6 +32,10 @@ export class Products {
     setTimeout(() => {
       this.productdetail.update((product) => ({ ...product, description: 'Banana' }));
     }, 2000);
+  }
+
+  getProductByName(name: string): Product | undefined {
+    return this.productlist().find((product) => product.name == name);
   }
 
   constructor() {

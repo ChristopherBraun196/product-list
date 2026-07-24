@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Products } from '../../services/products';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.scss',
 })
